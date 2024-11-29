@@ -1,0 +1,2 @@
+# chisq-fisher-viz
+ chisq-fisher-viz is an interactive Shiny application designed to perform Chi-Squared and Fisher's Exact Tests of independence, visualize the results through association and mosaic plots, and provide p-value interpretation. The app automatically selects the appropriate test based on data characteristics and allows users to upload frequency tables for analysis. Ideal for exploring statistical dependencies in categorical data.
