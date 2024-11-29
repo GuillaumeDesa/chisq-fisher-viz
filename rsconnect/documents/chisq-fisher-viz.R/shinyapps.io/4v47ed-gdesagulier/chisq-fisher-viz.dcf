@@ -1,0 +1,12 @@
+name: chisq-fisher-viz
+title: chisq-fisher-viz
+username: 4v47ed-gdesagulier
+account: 4v47ed-gdesagulier
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 13479641
+bundleId: 9435840
+url: https://4v47ed-gdesagulier.shinyapps.io/chisq-fisher-viz/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
