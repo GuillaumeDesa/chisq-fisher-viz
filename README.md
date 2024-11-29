@@ -34,6 +34,10 @@ Open the R script in RStudio or run it directly in your R console:
 shiny::runApp("path_to_this_repo")
 ```
 
+Upload the data (a table of frequencies, a.k.a. a contigency table) as a spreadsheet file (preferably .xls or .xlsx), with row names and headers, and click 'Submit'.
+
+<img width="397" alt="Capture d’écran 2024-11-29 à 12 35 42" src="https://github.com/user-attachments/assets/354c0424-009a-463c-a962-e37b251998ea">
+
 The app will:
 
 - Perform the Chi-Squared or Fisher's Exact Test (depending on data).
