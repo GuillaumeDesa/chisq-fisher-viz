@@ -100,8 +100,8 @@ server <- function(input, output, session) {
         # Render tables for observed and expected frequencies for Fisher's Test
         output$tables <- renderUI({
           fluidRow(
-            column(4, h4("Observed frequencies"), tableOutput("fisher_observed_table")),
-            column(4, h4("Expected frequencies"), tableOutput("fisher_expected_table"))
+            column(6, h4("Observed frequencies"), tableOutput("fisher_observed_table")),
+            column(6, h4("Expected frequencies"), tableOutput("fisher_expected_table"))
           )
         })
         
@@ -113,9 +113,6 @@ server <- function(input, output, session) {
         output$fisher_expected_table <- renderTable({
           round(expected, 2) # Round for better readability
         }, rownames = TRUE)
-        
-        # No residuals table for Fisher's Exact Test
-        output$residuals_table <- renderUI({})
         
       } else {
         # Use Chi-Squared Test otherwise
