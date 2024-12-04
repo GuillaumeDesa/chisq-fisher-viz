@@ -26,11 +26,40 @@ ui <- fluidPage(
       br(), br(),
       uiOutput("p_value"), # Render p-value and test result dynamically
       br(),
-      uiOutput("test_message") # Display which test is being used and why
+      uiOutput("test_message"), # Display which test is being used and why
+      br(), br(),
+      # Add copyright note
+      div(
+        HTML("This work © 2024 by Guillaume Desagulier is licensed under 
+              <a href='https://creativecommons.org/licenses/by-nc/4.0/' target='_blank'>CC BY-NC 4.0</a>."),
+        style = "font-size: 0.9em; margin-top: 20px;"
+      ),
+      div(
+        HTML("<a href='https://github.com/GuillaumeDesa/chisq-fisher-viz' target='_blank'>GitHub Repository</a>"),
+        style = "font-size: 0.9em;"
+      )
     ),
     
     mainPanel(
-      withSpinner(plotOutput("plot")), # Add spinner to plot
+      # Add CSS to control the plot size
+      tags$head(
+        tags$style(HTML("
+          #plot-container {
+            height: 600px; /* Default height for the plot container */
+            overflow-y: auto; /* Allow vertical scrolling if the plot is too large */
+          }
+          #plot-container + .interpretation {
+            margin-top: -10px; /* Slightly reduce space between plot and interpretation text */
+          }
+        "))
+      ),
+      
+      # Flexible plot container
+      div(
+        id = "plot-container",
+        withSpinner(plotOutput("plot", height = "500px")) # Reserve height for larger plots
+      ),
+      
       br(),
       uiOutput("plot_interpretation"), # Add comments for plot interpretation
       br(),
