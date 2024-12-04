@@ -5,7 +5,7 @@ account: 4v47ed-gdesagulier
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 13479641
-bundleId: 9440395
+bundleId: 9463591
 url: https://4v47ed-gdesagulier.shinyapps.io/chisq-fisher-viz/
 version: 1
 asMultiple: FALSE
