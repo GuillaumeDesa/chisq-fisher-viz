@@ -56,7 +56,7 @@ The app will:
 
 ## License
 
-This work © 2024 by Guillaume Desagulier is licensed under CC BY-NC 4.0 
+This work © 2025 by Guillaume Desagulier is licensed under CC BY-NC 4.0 
 
 ## Acknowledgements
 The `vcd` package is used for visualizing contingency table results through association and mosaic plots.
