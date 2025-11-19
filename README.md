@@ -37,10 +37,6 @@ Open the R script in RStudio or run it directly in your R console:
 shiny::runApp("path_to_this_repo")
 ```
 
-Open the R script in RStudio or run it directly in your R console:
-```R
-# R commands to run the script
-```
 **Data Upload**: Upload the data (a table of frequencies, a.k.a. a contingency table) as a spreadsheet file (preferably .xls or .xlsx, but also supports .csv or .txt). The file must include row names and headers. Click 'Submit'.
 
 <img width="397" alt="Capture d’écran 2024-11-29 à 12 35 42" src="https://github.com/user-attachments/assets/354c0424-009a-463c-a962-e37b251998ea">
