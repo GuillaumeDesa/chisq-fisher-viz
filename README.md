@@ -47,7 +47,7 @@ Open the R script in RStudio or run it directly in your R console:
 *   **Association Plot (Chi-Squared Test)** : Shows the deviations from independence in the form of colored cells, with blue representing positive residuals (observed frequency is higher than expected) and red representing negative residuals (observed frequency is lower than expected).
 
 ### License
-This work **© 2024 by Guillaume Desagulier** is licensed under **CC BY-NC 4.0**.
+This work **© 2025 by Guillaume Desagulier** is licensed under **CC BY-NC 4.0**.
 
 ### Acknowledgements
 The `vcd` package is used for visualizing contingency table results through association and mosaic plots, and `shiny` was used to create the interactive web application. The `rmarkdown` package is used to generate downloadable HTML reports.
