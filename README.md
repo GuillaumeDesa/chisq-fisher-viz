@@ -25,9 +25,18 @@ These dependencies will be installed automatically by the script if they are mis
 
 ### Usage
 Clone this repository:
-```bash
-# Clone the repository
+
+```r
+git clone https://github.com/yourusername/chisq-fisher-viz.git
+cd chisq-fisher-viz
 ```
+
+Open the R script in RStudio or run it directly in your R console:
+
+```r
+shiny::runApp("path_to_this_repo")
+```
+
 Open the R script in RStudio or run it directly in your R console:
 ```R
 # R commands to run the script
