@@ -1,65 +1,54 @@
 # chisq-fisher-viz
 
-`chisq-fisher-viz` is an interactive Shiny application that allows users to perform Chi-Squared and Fisher's Exact Tests of independence on categorical data. The app visualizes the results with association and mosaic plots, and provides detailed p-value interpretations to guide statistical analysis. The tool is designed for users to upload frequency tables, automatically selects the appropriate test based on data characteristics, and helps interpret the significance of the test results.
+**chisq-fisher-viz** is an interactive Shiny application that allows users to perform **Chi-Squared and Fisher's Exact Tests of independence** on categorical data. The app visualizes the results with association and mosaic plots, and provides detailed p-value interpretations to guide statistical analysis. The tool is designed for users to upload frequency tables, automatically selects the appropriate test based on data characteristics, and helps interpret the significance of the test results.
 
-## Features
+### Features
+*   **Chi-Squared and Fisher's Exact Tests** : Automatically selects and performs the appropriate test based on the data.
+*   **Interactive Visualizations** : Visualizes test results using association plots (for Chi-Squared) and mosaic plots (for Fisher's Exact Test).
+*   **Dynamic Plot Scaling**: Plot height and width are automatically calculated based on the dimensions (rows and columns) of the input frequency table.
+*   **Exportable HTML Report**: Generate and download a full statistical report (.html) containing the test message, p-value interpretation, and frequency tables (Observed, Expected, and Residuals for Chi-Squared).
+*   **Exportable PNG Plot**: Download the association or mosaic plot as a high-resolution PNG file, with customizable width and height inputs (in inches).
+*   **P-value Interpretation** : Provides an explanation on how to interpret the p-value based on an alpha level of 0.05.
+*   **Monte Carlo Simulations** : Uses Monte Carlo simulations for Fisher's Exact Test if the table frequencies are too large.
 
-- **Chi-Squared and Fisher's Exact Tests**: Automatically selects and performs the appropriate test based on the data.
-- **Interactive Visualizations**: Visualizes test results using association plots (for Chi-Squared) and mosaic plots (for Fisher's Exact Test).
-- **P-value Interpretation**: Provides an explanation on how to interpret the p-value based on an alpha level of 0.05.
-- **Monte Carlo Simulations**: Uses Monte Carlo simulations for Fisher's Exact Test if the table frequencies are too large.
-
-## Installation
-
+### Installation
 To use this Shiny app locally, you need to install the following R packages:
+*   `shiny`
+*   `openxlsx`
+*   `ggplot2`
+*   `shinycssloaders`
+*   `vcd`
+*   **`rmarkdown`** (Required for HTML report generation)
 
-```r
-install.packages(c("shiny", "openxlsx", "ggplot2", "shinycssloaders", "vcd"))
-```
+These dependencies will be installed automatically by the script if they are missing.
 
-These will be installed automatically by the script.
-
-## Usage
-
+### Usage
 Clone this repository:
-
+```bash
+# Clone the repository
 ```
-git clone https://github.com/yourusername/chisq-fisher-viz.git
-cd chisq-fisher-viz
-```
-
 Open the R script in RStudio or run it directly in your R console:
-
-```r
-shiny::runApp("path_to_this_repo")
+```R
+# R commands to run the script
 ```
+**Data Upload**: Upload the data (a table of frequencies, a.k.a. a contingency table) as a spreadsheet file (preferably .xls or .xlsx, but also supports .csv or .txt). The file must include row names and headers. Click 'Submit'.
 
-Upload the data (a table of frequencies, a.k.a. a contigency table) as a spreadsheet file (preferably .xls or .xlsx), with row names and headers, and click 'Submit'.
+**The app will**:
+*   Perform the Chi-Squared or Fisher's Exact Test (depending on data).
+*   Display the corresponding plot (association plot for Chi-Square or mosaic plot for Fisher's exact test).
+*   Provide p-value interpretation and statistical results, including observed, expected, and residual frequency tables.
+*   **Allow downloading the full statistical report in HTML format**.
+*   **Allow downloading the plot in PNG format** using customizable width and height settings.
 
-<img width="397" alt="Capture d’écran 2024-11-29 à 12 35 42" src="https://github.com/user-attachments/assets/354c0424-009a-463c-a962-e37b251998ea">
+### How to Interpret the Results
+*   **Chi-Squared Test** : The test is used when the expected frequencies in each cell are large enough (typically greater than 5). If the p-value is less than 0.05, it indicates a significant association between the variables.
+*   **Fisher's Exact Test** : This test is used when the expected frequencies are too low for the Chi-Squared test to be valid. If the p-value is less than 0.05, there is a significant association.
+*   **Mosaic Plot (Fisher’s Test)** : The size of the tiles indicates the frequency of observations. Shaded tiles highlight significant deviations from independence.
+*   **Association Plot (Chi-Squared Test)** : Shows the deviations from independence in the form of colored cells, with blue representing positive residuals (observed frequency is higher than expected) and red representing negative residuals (observed frequency is lower than expected).
 
-The app will:
+### License
+This work **© 2024 by Guillaume Desagulier** is licensed under **CC BY-NC 4.0**.
 
-- Perform the Chi-Squared or Fisher's Exact Test (depending on data).
-- Display the corresponding plot (association plot for Chi-Square or mosaic plot for Fisher's exact test).
-- Provide p-value interpretation and statistical results.
-
-## How to Interpret the Results
-
-- **Chi-Squared Test**: The test is used when the expected frequencies in each cell are large enough (typically greater than 5). If the p-value is less than 0.05, it indicates a significant association between the variables.
-
-- **Fisher's Exact Test**: Used when the expected frequencies are too low for the Chi-Squared test to be valid. If the p-value is less than 0.05, there is a significant association.
-
-- **Mosaic Plot (Fisher’s Test)**: The size of the tiles indicates the frequency of observations. Shaded tiles highlight significant deviations from independence.
-
-- **Association Plot (Chi-Squared Test)**: Shows the deviations from independence in the form of colored cells, with blue and red colors representing positive and negative residuals respectively.
-
-## License
-
-This work © 2025 by Guillaume Desagulier is licensed under CC BY-NC 4.0 
-
-## Acknowledgements
-The `vcd` package is used for visualizing contingency table results through association and mosaic plots.
-`shiny` was used to create the interactive web application.
-
-
+### Acknowledgements
+The `vcd` package is used for visualizing contingency table results through association and mosaic plots, and `shiny` was used to create the interactive web application. The `rmarkdown` package is used to generate downloadable HTML reports.
+```
