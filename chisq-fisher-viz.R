@@ -303,7 +303,7 @@ server <- function(input, output, session) {
         "### P-value Interpretation",
         p_interp_markdown, 
         
-        "\\",
+        "\n",
         "## Frequency Tables",
         "### Observed Frequencies",
         "```",
@@ -353,7 +353,7 @@ server <- function(input, output, session) {
       # Plotting logic based on test type
       freq_table <- results()$freq_table
       if (results()$test_type == "Fisher") {
-        mosaic(~ ., data = as.table(freq_table), shade = TRUE, main = "Mosaic Plot (Fisher's Exact Test)")
+        mosaic(~ ., data = as.table(freq_table), shade = TRUE, main = "Mosaic Plot")
       } else {
         assoc(freq_table, shade = TRUE, labeling = labeling_values, main = "Association Plot")
       }
